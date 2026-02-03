@@ -1,0 +1,40 @@
+<div class="col-md-12 mt-5 pe-5 content fade-up">
+  <h1>Contact</h1>
+    <form class="contact-form" (submit)="sendEmail($event)">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          class="form-control"
+          placeholder="Your Name"
+          name="from_name"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          class="form-control"
+          placeholder="Your Email"
+          name="user_email"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          class="form-control"
+          placeholder="Your Message"
+          name="message"
+          required>
+        </textarea>
+      </div>
+  
+      <input type="submit" value="Send">
+    </form>
+  </div>

@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+* { 
+    font: 400; 
+    font-family: "JetBrains Mono";
+  }
+
+.parallax {
+  /* The image used */
+  background-image: url("../Assets/1947484.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  .text-custom-orange {
+    color: #ff9100; 
+  }
+
+  .navbar {
+    color: #ff9100 !important;
+  }
+  
+  .navbar a,
+  .navbar span {
+    color: #ff9100 !important;
+  }
+  
+  .navbar-brand {
+    color: #ff9100 !important;
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
