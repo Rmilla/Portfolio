@@ -1,7 +1,18 @@
+@import '@fontsource/inter/400.css';  /* Poids normal */
+@import '@fontsource/inter/600.css';  /* Poids bold */
+@import '@fontsource/inter/700.css';  /* Poids extra bold */
+
+@import '@fontsource/playfair-display/400.css'; /* Poids normal */
+@import '@fontsource/playfair-display/700.css'; /* Poids extra bold */
+
 /* You can add global styles to this file, and also import other style files */
 * { 
     font: 400; 
-    font-family: "JetBrains Mono";
+    font-family: "Inter", sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-family: "Playfair Display", serif;
   }
 
 .parallax {
@@ -43,4 +54,49 @@
   .animated {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Style des boutons */
+  .btn-primary {
+    background: linear-gradient(135deg, #1a1a1a 0%, #ff9100 100%) !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(255, 145, 0, 0.3) !important;
+  }
+
+  /* Boutons prev/next du carrousel */
+  .owl-nav button {
+    background: linear-gradient(135deg, #1a1a1a 0%, #ff9100 100%) !important;
+    border: none !important;
+    color: white !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .owl-nav button:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 4px 12px rgba(255, 145, 0, 0.3) !important;
+  }
+
+  .owl-nav button span {
+    color: white !important;
+  }
+
+  /* Boutons de pagination */
+  .owl-dots .owl-dot {
+    background: rgba(255, 255, 255, 0.3) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .owl-dots .owl-dot.active {
+    background: linear-gradient(135deg, #1a1a1a 0%, #ff9100 100%) !important;
   }

@@ -1,0 +1,75 @@
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #ff9100 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.skill-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 12px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.skill-card:hover .skill-logo {
+  filter: brightness(1) invert(0);
+}
+
+.skill-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .skill-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skill-name {
+    font-size: 12px;
+  }
+}
+
+/* Override des styles du carrousel */
+::ng-deep .owl-dots .owl-dot {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border-radius: 50%;
+}
+
+::ng-deep .owl-dots .owl-dot.active {
+  background-color: #ff9100 !important;
+}
+
+::ng-deep .owl-dots .owl-dot span {
+  background-color: transparent !important;
+}
+
+::ng-deep .owl-prev,
+::ng-deep .owl-next {
+  background: linear-gradient(135deg, #1a1a1a 0%, #ff9100 100%) !important;
+  color: white !important;
+}
+
+::ng-deep .owl-prev:hover,
+::ng-deep .owl-next:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 4px 12px rgba(255, 145, 0, 0.3) !important;
+}
