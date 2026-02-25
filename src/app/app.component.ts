@@ -3,6 +3,7 @@ import { CommonModule, isPlatformBrowser} from '@angular/common';
 import { CarousselComponent } from './caroussel/caroussel.component';
 import { ContentComponent } from "./content/content.component";
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { state, trigger, style, animate, transition, query, stagger } from '@angular/animations';
 import { ApplicationModule } from '@angular/core';
 
@@ -13,8 +14,8 @@ import { ApplicationModule } from '@angular/core';
     CarousselComponent, 
     ContentComponent, 
     CommonModule, 
-    ContactFormComponent, 
-    
+    ContactFormComponent,
+    NavbarComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
