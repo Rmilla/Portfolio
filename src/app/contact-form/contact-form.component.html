@@ -1,40 +1,32 @@
 <section id="contact" class="col-md-12 mt-5 pe-5 content fade-up">
   <h1>Contact</h1>
-    <form class="contact-form" (submit)="sendEmail($event)">
-      <div class="form-group">
+    <form *ngIf="contactForm" class="contact-form" [formGroup]="contactForm" (ngSubmit)="sendEmail()">
         <label for="name">Name</label>
-        <input
-          id="name"
-          class="form-control"
-          placeholder="Your Name"
-          name="from_name"
-          required
+        <input id="name" class="form-control" placeholder="Your Name" formControlName="from_name" required
         />
-      </div>
-  
-      <div class="form-group">
+        <div *ngIf="f['from_name']?.invalid && f['from_name']?.touched" class="text-danger">
+          <small *ngIf="f['from_name']?.errors?.['required']">Nom requis</small>
+        </div>
+
         <label for="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          class="form-control"
-          placeholder="Your Email"
-          name="user_email"
-          required
+        <input id="email" type="email" class="form-control" placeholder="Your Email" formControlName="user_email" required
         />
-      </div>
+        <div *ngIf="f['user_email']?.invalid && f['user_email']?.touched" class="text-danger">
+          <small *ngIf="f['user_email']?.errors?.['required']">Email requis</small>
+          <small *ngIf="f['user_email']?.errors?.['email']">Email invalide</small>
+        </div>
   
-      <div class="form-group">
         <label for="message">Message</label>
-        <textarea
-          id="message"
-          class="form-control"
-          placeholder="Your Message"
-          name="message"
-          required>
-        </textarea>
-      </div>
+        <textarea id="message" class="form-control" placeholder="Your Message" formControlName="message" required></textarea>
+        <div *ngIf="f['message']?.invalid && f['message']?.touched" class="text-danger">
+          <small *ngIf="f['message']?.errors?.['required']">Message requis</small>
+        </div>
   
-      <input type="submit" value="Send">
+      <input 
+        type="submit" 
+        [value]="isSending ? 'Sending...' : 'Send'"
+        [disabled]="contactForm.invalid || isSending"
+      >
     </form>
 </section>
+
